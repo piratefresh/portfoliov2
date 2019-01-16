@@ -33,6 +33,12 @@ class ProjectTemplate extends Component {
       <Layout>
         <h1 dangerouslySetInnerHTML={{ __html: project.title }} />
         <h4>Tech: {project.acf.tech}</h4>
+        <img
+          src="https://res.cloudinary.com/da91pbpmj/image/upload/v1547619060/GitHub_Logo.png"
+          alt="Github Link"
+        >
+          <a href={project.acf.githublink} />
+        </img>
         <img src={project.acf.cloudinary} alt="test" />
         <PageLayout>
           <div className="item">
