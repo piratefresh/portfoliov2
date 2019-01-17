@@ -27,6 +27,7 @@ const PageLayout = styled.div`
   }
 `
 const Buttons = styled.div`
+  display: flex;
   img {
     height: 64px;
     width: 32px;
