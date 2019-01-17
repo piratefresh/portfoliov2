@@ -25,6 +25,12 @@ const PageLayout = styled.div`
     align-items: center;
     font-size: 1.5rem;
   }
+  .githubLogo {
+    img {
+      height: 32px;
+      width: 32px;
+    }
+  }
 `
 
 class ProjectTemplate extends Component {
@@ -42,7 +48,7 @@ class ProjectTemplate extends Component {
         <h4>Tech: {project.acf.tech}</h4>
 
         <a href={project.acf.githublink}>
-          <img src={GithubLogo} alt="Github Link" />
+          <img className="githubLogo" src={GithubLogo} alt="Github Link" />
         </a>
         <img src={project.acf.cloudinary} alt="test" />
         <PageLayout>
