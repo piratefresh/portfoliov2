@@ -25,11 +25,16 @@ const PageLayout = styled.div`
     align-items: center;
     font-size: 1.5rem;
   }
-  .githubLogo {
-    img {
-      height: 32px;
-      width: 32px;
-    }
+`
+const Buttons = styled.div`
+  img {
+    height: 32px;
+    width: 32px;
+  }
+  button {
+    background: #3498db;
+    width: 100px;
+    padding: 4px 0;
   }
 `
 
