@@ -28,7 +28,7 @@ const PageLayout = styled.div`
 `
 const Buttons = styled.div`
   img {
-    height: 32px;
+    height: 64px;
     width: 32px;
   }
   button {
@@ -55,7 +55,7 @@ class ProjectTemplate extends Component {
             <img className="githubLogo" src={GithubLogo} alt="Github Link" />
           </a>
           <button>
-            <a href={project.acf.livelink} />
+            <a href={project.acf.livelink}>Live Link</a>
           </button>
         </Buttons>
 
