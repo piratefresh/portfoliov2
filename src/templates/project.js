@@ -36,7 +36,6 @@ const PageLayout = styled.div`
 class ProjectTemplate extends Component {
   render() {
     const project = this.props.data.wordpressWpProjects
-    console.log(project)
 
     return (
       <Layout>
