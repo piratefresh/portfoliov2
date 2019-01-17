@@ -3,7 +3,10 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import SEO from '../components/seo'
 import Layout from '../components/layout'
+const GithubLogo =
+  'https://res.cloudinary.com/da91pbpmj/image/upload/v1547619060/GitHub_Logo.png'
 
 const PageLayout = styled.div`
   .item {
@@ -31,14 +34,16 @@ class ProjectTemplate extends Component {
 
     return (
       <Layout>
+        <SEO
+          title="All posts"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
         <h1 dangerouslySetInnerHTML={{ __html: project.title }} />
         <h4>Tech: {project.acf.tech}</h4>
-        <img
-          src="https://res.cloudinary.com/da91pbpmj/image/upload/v1547619060/GitHub_Logo.png"
-          alt="Github Link"
-        >
-          <a href={project.acf.githublink} />
-        </img>
+
+        <a href={project.acf.githublink}>
+          <img src={GithubLogo} alt="Github Link" />
+        </a>
         <img src={project.acf.cloudinary} alt="test" />
         <PageLayout>
           <div className="item">
