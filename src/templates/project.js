@@ -50,10 +50,15 @@ class ProjectTemplate extends Component {
         />
         <h1 dangerouslySetInnerHTML={{ __html: project.title }} />
         <h4>Tech: {project.acf.tech}</h4>
+        <Buttons>
+          <a href={project.acf.githublink}>
+            <img className="githubLogo" src={GithubLogo} alt="Github Link" />
+          </a>
+          <button>
+            <a href={project.acf.livelink} />
+          </button>
+        </Buttons>
 
-        <a href={project.acf.githublink}>
-          <img className="githubLogo" src={GithubLogo} alt="Github Link" />
-        </a>
         <img src={project.acf.cloudinary} alt="test" />
         <PageLayout>
           <div className="item">
