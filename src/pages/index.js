@@ -55,10 +55,10 @@ class IndexPage extends Component {
 
     return (
       <Layout>
-        {/*         <SEO
+        <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        /> */}
+        />
         <Headline>
           Hey, I'm <span>Magnus</span> an aspiring web developer! Currently
           loving <span>React</span> and <span>Graphql</span>.

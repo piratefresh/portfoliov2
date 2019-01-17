@@ -26,17 +26,28 @@ const PageLayout = styled.div`
     font-size: 1.5rem;
   }
 `
-const Buttons = styled.div`
+const Links = styled.div`
   display: flex;
+  align-items: center;
+  margin-top: -40px;
+  a {
+    display: block;
+    text-decoration: none;
+  }
   img {
-    height: 64px;
-    width: 32px;
+    height: 40px;
+    margin-top: 40px;
   }
-  button {
-    background: #3498db;
-    width: 100px;
-    padding: 4px 0;
-  }
+`
+const Button = styled.button`
+  display: block;
+  background: #f3c325;
+  height: 40px;
+  padding: 0 1%;
+  width: 90px;
+  margin: 0;
+  border: none;
+  outline: none;
 `
 
 class ProjectTemplate extends Component {
@@ -51,14 +62,15 @@ class ProjectTemplate extends Component {
         />
         <h1 dangerouslySetInnerHTML={{ __html: project.title }} />
         <h4>Tech: {project.acf.tech}</h4>
-        <Buttons>
+        <Links>
           <a href={project.acf.githublink}>
             <img className="githubLogo" src={GithubLogo} alt="Github Link" />
           </a>
-          <button>
-            <a href={project.acf.livelink}>Live Link</a>
-          </button>
-        </Buttons>
+          {console.log(project.acf.livelink)}
+          <a href={project.acf.livelink}>
+            <Button>Live Link</Button>
+          </a>
+        </Links>
 
         <img src={project.acf.cloudinary} alt="test" />
         <PageLayout>
@@ -103,6 +115,8 @@ export const projectQuery = graphql`
         desc2
         desc3
         tech
+        livelink
+        githublink
       }
     }
     site {
