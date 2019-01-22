@@ -9,6 +9,18 @@ class PostTemplate extends Component {
 
     return (
       <Layout>
+        <SEO
+          title={post.title}
+          keywords={[
+            `portfolio`,
+            `gatsby`,
+            `javascript`,
+            `react`,
+            'web dev',
+            'magnus',
+            'nilsen',
+          ]}
+        />
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </Layout>

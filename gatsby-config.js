@@ -3,7 +3,7 @@ module.exports = {
     title: `Magnus Portfolio`,
     subtitle: `Portfolio`,
     author: `Magnus Nilsen`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Magnus's Portfolio`,
     siteUrl: `localhost:4000`,
   },
   plugins: [

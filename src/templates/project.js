@@ -57,8 +57,16 @@ class ProjectTemplate extends Component {
     return (
       <Layout>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title={project.title}
+          keywords={[
+            `portfolio`,
+            `gatsby`,
+            `javascript`,
+            `react`,
+            'web dev',
+            'magnus',
+            'nilsen',
+          ]}
         />
         <h1 dangerouslySetInnerHTML={{ __html: project.title }} />
         <h4>Tech: {project.acf.tech}</h4>

@@ -8,6 +8,18 @@ class PageTemplate extends Component {
 
     return (
       <Layout>
+        <SEO
+          title={currentPage.title}
+          keywords={[
+            `portfolio`,
+            `gatsby`,
+            `javascript`,
+            `react`,
+            'web dev',
+            'magnus',
+            'nilsen',
+          ]}
+        />
         <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
         <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
       </Layout>

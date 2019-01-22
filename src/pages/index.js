@@ -57,7 +57,15 @@ class IndexPage extends Component {
       <Layout>
         <SEO
           title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          keywords={[
+            `portfolio`,
+            `gatsby`,
+            `javascript`,
+            `react`,
+            'web dev',
+            'magnus',
+            'nilsen',
+          ]}
         />
         <Headline>
           Hey, I'm <span>Magnus</span> an aspiring web developer! Currently
