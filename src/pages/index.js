@@ -1,7 +1,7 @@
 import React, { Component, useState, useRef } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { animated, useSpring, interpolate } from 'react-spring/hooks'
+import { animated, useSpring } from 'react-spring/hooks'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -150,7 +150,7 @@ export const pageQuery = graphql`
 
 function Card({ children }) {
   // ref to get card elements offsett and dimensions
-  const ref = useRef()
+  const ref = useRef(null)
 
   // Keep track of whether card is hovered so we can increment ...
   // ... zIndex to ensure it shows up above other cards when animation causes overlap.
