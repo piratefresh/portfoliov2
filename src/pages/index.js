@@ -6,6 +6,8 @@ import { animated, useSpring } from 'react-spring/hooks'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import StyledLink from '../components/StyledLink'
+const GithubLogo =
+  'https://res.cloudinary.com/da91pbpmj/image/upload/v1547619060/GitHub_Logo.png'
 
 const Headline = styled.h1`
   display: block;
@@ -26,6 +28,9 @@ const Container = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
+`
+const GithubImg = styled.img`
+  height: 40px;
 `
 const Item = styled.div`
   display: flex;
@@ -72,6 +77,9 @@ class IndexPage extends Component {
           Hey, I'm <span>Magnus</span> an aspiring web developer! Currently
           loving <span>React</span> and <span>Graphql</span>.
         </Headline>
+        <a href="https://github.com/piratefresh/">
+          <GithubImg src={GithubLogo} alt="github link" srcset="" />
+        </a>
         <Container>
           {data.allWordpressWpProjects.edges.map(({ node }) => (
             <Card key={node.slug}>

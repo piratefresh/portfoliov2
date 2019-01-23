@@ -32,16 +32,7 @@ const Layout = ({ children }) => (
       <div id="outer-container">
         <Container>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            id="page-wrap"
-            style={{
-              margin: `0 auto`,
-              marginTop: '12%',
-              maxWidth: 1200,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0,
-            }}
-          >
+          <div id="page-wrap" className="content">
             {children}
           </div>
         </Container>

@@ -27,6 +27,10 @@ const Nav = styled.ul`
     font-size: 1rem;
     padding: 0;
   }
+  a {
+    color: #33202b;
+    text-decoration: none;
+  }
 `
 const Logo = styled.h1`
   font-size: 4rem;
@@ -84,7 +88,7 @@ class Header extends React.Component {
                   <Logo>
                     <StyledLink to="/">{this.props.siteTitle}</StyledLink>
                   </Logo>
-
+                  <a href="https://github.com/piratefresh/">Github Profile</a>
                   {data.allWordpressWpProjects.edges.map(link => {
                     return (
                       <NavLink
@@ -108,6 +112,7 @@ class Header extends React.Component {
                     <Logo>
                       <StyledLink to="/">{this.props.siteTitle}</StyledLink>
                     </Logo>
+                    <a href="https://github.com/piratefresh/">Github Profile</a>
                     {data.allWordpressWpProjects.edges.map(link => {
                       return (
                         <NavLink

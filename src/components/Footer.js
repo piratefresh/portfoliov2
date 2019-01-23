@@ -9,19 +9,14 @@ const FooterStyle = styled.footer`
   align-items: center;
   background: #f3c325;
   margin: 0;
-  margin-top: 5%;
+  margin-top: 10%;
   position: relative;
   p {
     color: #33202b;
   }
   @media (max-width: 700px) {
-    margin-top: 0%;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
     p {
-      font-size: 0.7rem;
+      font-size: 0.5rem;
     }
   }
 `
