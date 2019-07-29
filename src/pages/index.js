@@ -107,6 +107,8 @@ class IndexPage extends Component {
 
 export default IndexPage
 
+const Card = styled.div``
+
 // Set here the ID of the home page.
 export const pageQuery = graphql`
   query {
@@ -147,71 +149,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-function Card({ children }) {
-  // ref to get card elements offsett and dimensions
-  const ref = useRef()
-
-  // Keep track of whether card is hovered so we can increment ...
-  // ... zIndex to ensure it shows up above other cards when animation causes overlap.
-  const [isHovered, setHovered] = useState(false)
-
-  // The useSpring hook
-  const [props, set] = useSpring(() => ({
-    // Array containing [rotateX, rotateY, and scale] values.
-    // We store under a single key (xys) instead of separate keys ...
-    // ... so that we can use animatedProps.xys.interpolate() to ...
-    // ... easily generate the css transform value below.
-    xys: [0, 0, 1],
-    // Setup physics
-    config: { mass: 5, tension: 350, friction: 40 },
-  }))
-
-  return (
-    <animated.div
-      ref={ref}
-      className="card"
-      onMouseEnter={() => setHovered(true)}
-      onMouseMove={({ clientX, clientY }) => {
-        // Get mouse x position within card
-        const x =
-          clientX -
-          (ref.current.offsetLeft -
-            (window.scrollX || window.pageXOffset || document.body.scrollLeft))
-
-        // Get mouse y position within card
-        const y =
-          clientY -
-          (ref.current.offsetTop -
-            (window.scrollY || window.pageYOffset || document.body.scrollTop))
-
-        // Set animated values based on mouse position and card dimensions
-        const dampen = 50 // Lower the number the less rotation
-
-        const xys = [
-          -(y - ref.current.clientHeight / 2) / dampen, // rotateX
-          (x - ref.current.clientWidth / 2) / dampen, // rotateY
-          1.07, // Scale
-        ]
-        // Update values to animate to
-        set({ xys: xys })
-      }}
-      onMouseLeave={() => {
-        setHovered(false)
-        // Set xys back to original
-        set({ xys: [0, 0, 1] })
-      }}
-      style={{
-        // If hovered we want it to overlap other cards when it scales up
-        zIndex: isHovered ? 2 : 1,
-        // Interpolate function to handle css changes
-        transform: props.xys.interpolate(
-          (x, y, s) =>
-            `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
-        ),
-      }}
-    >
-      {children}
-    </animated.div>
-  )
-}

@@ -11,13 +11,15 @@ import './Navbar.css'
 
 const ContainerNav = styled.header`
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
   color: #000;
 `
 const Nav = styled.ul`
   font-family: 'Sarabun', sans-serif;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   background-color: transparent;
   margin: 0;
@@ -30,7 +32,6 @@ const Nav = styled.ul`
 `
 const Logo = styled.h1`
   font-size: 4rem;
-  margin-left: 2rem;
   position: relative;
   z-index: 2;
 
@@ -38,6 +39,11 @@ const Logo = styled.h1`
     font-size: 1rem;
   }
 `
+const NavWrapper = styled.nav`
+  display: flex;
+  flex-direction: column;
+`
+
 class Header extends React.Component {
   constructor(props) {
     super(props)
@@ -85,14 +91,23 @@ class Header extends React.Component {
                     <StyledLink to="/">{this.props.siteTitle}</StyledLink>
                   </Logo>
 
+                  <NavLink to={`/blog`} key="blog">
+                    Blog
+                  </NavLink>
+                  <a href="https://docdro.id/tfnohEb" key="blog">
+                    Resume
+                  </a>
+
                   {data.allWordpressWpProjects.edges.map(link => {
                     return (
-                      <NavLink
-                        to={`projects/${link.node.slug}`}
-                        key={link.node.id}
-                      >
-                        {link.node.title}
-                      </NavLink>
+                      <NavWrapper>
+                        <NavLink
+                          to={`projects/${link.node.slug}`}
+                          key={link.node.id}
+                        >
+                          {link.node.title}
+                        </NavLink>
+                      </NavWrapper>
                     )
                   })}
                 </Nav>
